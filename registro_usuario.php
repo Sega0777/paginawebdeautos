@@ -109,12 +109,7 @@
 
 <?php
 // Conexión a la base de datos usando MySQLi
-$conn = new mysqli("localhost", "root", "", "distribuidora_autos");
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . htmlspecialchars($conn->connect_error, ENT_QUOTES, 'UTF-8'));
-}
+include('conexion.php');
 
 // Procesar el formulario al enviarlo
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
