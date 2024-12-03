@@ -1,11 +1,6 @@
 <?php
 // Conexión a la base de datos
-$conn = new mysqli("localhost", "root", "", "distribuidora_autos");
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+include('conexion.php');
 
 // Llamar al procedimiento almacenado
 $sql = "CALL obtenerReservasPorUsuario()";
