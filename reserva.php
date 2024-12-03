@@ -95,13 +95,9 @@
         <h1>Reserva tu Auto</h1>
 
         <?php
-        // Conexión a la base de datos
-        $conn = new mysqli("localhost", "root", "", "distribuidora_autos");
-
-        if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
-        }
-
+        
+        include('conexion.php');
+        
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Sanitización de entradas
             $nombre = filter_var(trim($_POST['nombre']), FILTER_SANITIZE_STRING);
