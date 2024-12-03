@@ -1,11 +1,6 @@
 <?php
 // Conexión a la base de datos
-$conn = new mysqli("localhost", "root", "", "distribuidora_autos");
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+include('conexion.php');
 
 // Procesar el formulario al enviarlo
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
