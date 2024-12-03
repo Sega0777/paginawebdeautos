@@ -9,14 +9,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Conexión a la base de datos
-$conn = new mysqli("localhost", "root", "", "distribuidora_autos");
 
-// Verificar la conexión
-if ($conn->connect_error) {
-    // Registrar el error en los logs del servidor y mostrar un mensaje genérico al usuario
-    error_log("Conexión fallida: " . $conn->connect_error);
-    die("Ocurrió un problema con la conexión a la base de datos. Intente más tarde.");
-}
+include('conexion.php');
 
 // Verificar si se ha enviado un ID de reserva para cancelar
 if (isset($_GET['id'])) {
