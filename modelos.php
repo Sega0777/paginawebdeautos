@@ -139,19 +139,7 @@
             
 
             <?php
-                // Configuración de la base de datos
-                $host = "localhost";
-                $usuario = "root";
-                $password = "";
-                $db = "distribuidora_autos";
-
-                // Conexión a la base de datos con manejo de errores
-                $conn = new mysqli($host, $usuario, $password, $db);
-
-                if ($conn->connect_error) {
-                    // No mostrar detalles del error al usuario
-                    die("Error al conectar con la base de datos. Por favor, inténtelo más tarde.");
-                }
+                include('conexion.php');
 
                 // Consulta preparada para obtener los modelos
                 $stmt = $conn->prepare("SELECT modelo, descripcion, precio, imagen FROM autos");
