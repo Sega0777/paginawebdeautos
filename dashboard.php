@@ -9,13 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Conexión a la base de datos
-$conn = new mysqli("localhost", "root", "", "distribuidora_autos");
-
-// Verificar si la conexión fue exitosa
-if ($conn->connect_error) {
-    error_log("Error de conexión a la base de datos: " . $conn->connect_error);
-    die("Ocurrió un problema con la conexión. Intenta más tarde.");
-}
+include('conexion.php');
 
 // Preparar consulta para obtener las reservas del usuario autenticado
 $user_id = $_SESSION['user_id'];
