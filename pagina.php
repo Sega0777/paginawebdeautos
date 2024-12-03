@@ -162,13 +162,7 @@
             <h2>Modelos Más Elegidos</h2>
 
             <?php
-            // Conexión a la base de datos usando MySQLi
-            $conn = new mysqli("localhost", "root", "", "distribuidora_autos");
-
-            // Verificar conexión
-            if ($conn->connect_error) {
-                die("Conexión fallida: " . $conn->connect_error);
-            }
+            include('conexion.php');
 
             // Consulta segura para obtener los modelos más elegidos
             $stmt = $conn->prepare("SELECT imagen, modelo, precio FROM autos LIMIT ?");
